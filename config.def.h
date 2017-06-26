@@ -114,9 +114,9 @@ const char *colorname[] = {
  * foreground, background, cursor, reverse cursor
  */
 unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 256;
-unsigned int defaultrcs = 257;
+unsigned int defaultbg  =0;
+unsigned int defaultcs = 2;
+unsigned int defaultrcs = 11;
 
 /*
  * Default shape of cursor
@@ -125,7 +125,7 @@ unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-unsigned int cursorshape = 4;
+unsigned int cursorshape = 6; 
 
 /*
  * Default columns and rows numbers

@@ -1304,7 +1304,7 @@ xdrawcursor(void)
 	} else {
 		if (ena_sel && selected(term.c.x, term.c.y)) {
 			drawcol = dc.col[defaultrcs];
-			g.fg = defaultfg;
+			g.fg = defaultcs;
 			g.bg = defaultrcs;
 		} else {
 			drawcol = dc.col[defaultcs];
