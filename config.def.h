@@ -54,7 +54,7 @@ unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-unsigned int cursorthickness = 2;
+unsigned int cursorthickness = 4;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -63,7 +63,7 @@ unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char termname[] = "st-256color";
+char termname[] = "xterm-256color";
 
 /*
  * spaces per tab
@@ -80,35 +80,32 @@ char termname[] = "st-256color";
  *
  *	stty tabs
  */
-static unsigned int tabspaces = 8;
+static unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+	"#09141b",  /*  0: black    */
+	"#d75d29",  /*  1: red      */
+	"#8c9d00",  /*  2: green    */
+	"#fea636",  /*  3: yellow   */
+	"#009dba",  /*  4: blue     */
+	"#98dff2",  /*  5: magenta  */
+	"#0084a1",  /*  6: cyan     */
+	"#e1bc94",  /*  7: white    */
+	"#8fa1af",  /*  8: brblack  */
+	"#d98f7f",  /*  9: brred    */
+	"#aad300",  /* 10: brgreen  */
+	"#fed5a5",  /* 11: bryellow */
+	"#a2cad4",  /* 12: brblue   */
+	"#cbedf6",  /* 13: brmagenta*/
+	"#00c5c7",  /* 14: brcyan   */
+	"#ffe6d1",  /* 15: brwhite  */
+    "#09141b",  /* Black */
+    "#ded3be",  /* White */
+    "#23526b",  /* Selection BG */
+    "#ded3be",  /* Selection FG */
+    "#09141b",  /* Background */
+	"#1d4055",  /* black    */
 };
 
 
@@ -116,7 +113,7 @@ const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
+unsigned int defaultfg = 15;
 unsigned int defaultbg = 0;
 unsigned int defaultcs = 256;
 unsigned int defaultrcs = 257;
@@ -128,7 +125,7 @@ unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-unsigned int cursorshape = 2;
+unsigned int cursorshape = 4;
 
 /*
  * Default columns and rows numbers
@@ -141,7 +138,7 @@ unsigned int rows = 24;
  * Default colour and shape of the mouse cursor
  */
 unsigned int mouseshape = XC_xterm;
-unsigned int mousefg = 7;
+unsigned int mousefg = 10;
 unsigned int mousebg = 0;
 
 /*
@@ -178,6 +175,8 @@ Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
